@@ -10,11 +10,17 @@ public class Employee {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
+	//Employee name
 	private String name;
 
 	public Long getId() {
 		return id;
+	}
+
+	public Employee(Long id, String name) {
+		super();
+		this.id = id;
+		this.name = name;
 	}
 
 	public void setId(Long id) {
