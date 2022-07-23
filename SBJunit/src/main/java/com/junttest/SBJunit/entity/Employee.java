@@ -16,6 +16,10 @@ public class Employee {
 	public Long getId() {
 		return id;
 	}
+	
+	public Employee() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public Employee(Long id, String name) {
 		super();

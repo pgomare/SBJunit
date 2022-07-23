@@ -63,15 +63,14 @@ public class EmpControllerTest {
 	
 	
 	
-	@Test
-	public void getEmployeeById() throws Exception
-	{
-		Optional<Employee> empdata = Optional.of(mockEmp(response));
-		Mockito.when(empService.getEmployeeById(new Long("5"))).thenReturn(empdata);
-		this.mockMvc.perform(get("/employee/5")).andExpect(status().isOk()).andExpect(jsonPath("id").value(5));
-		assertEquals(empdata.get().getId(), new Long("5"));
-		verify(empService,times(1)).getEmployeeById(new Long("5"));
-	}
+	/*
+	 * @Test public void getEmployeeById() throws Exception { Optional<Employee>
+	 * empdata = Optional.of(mockEmp(response));
+	 * Mockito.when(empService.getEmployeeById(new Long("5"))).thenReturn(empdata);
+	 * this.mockMvc.perform(get("/employee/5")).andExpect(status().isOk()).andExpect
+	 * (jsonPath("id").value(5)); assertEquals(empdata.get().getId(), new
+	 * Long("5")); verify(empService,times(1)).getEmployeeById(new Long("5")); }
+	 */
 	
 	@Test
 	public void getData() throws Exception
@@ -94,7 +93,7 @@ public class EmpControllerTest {
 	@Test 
 	public void createEmp() throws Exception
 	{
-		Employee emp = new Employee();
+		Employee emp = new Employee(null, response);
 		Mockito.when(empService.createEmp(Mockito.any(Employee.class))).thenReturn(emp);
 		this.mockMvc.perform(post("/createemployee")
 				.accept(MediaType.APPLICATION_JSON)

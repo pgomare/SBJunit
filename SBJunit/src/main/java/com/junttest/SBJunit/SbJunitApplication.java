@@ -11,7 +11,7 @@ public class SbJunitApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SbJunitApplication.class, args);
 		
-		System.out.println("**********Application Started");
+		System.out.println("**********Application Started**********");
 	}
 
 }
